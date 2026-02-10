@@ -1,0 +1,169 @@
+[
+    {
+        "id": 1,
+        "titulo": "Senior Backend Engineer",
+        "empresa": "Innovatech Solutions",
+        "ubicacion": "Madrid, España",
+        "modalidad": "Híbrido",
+        "tecnologias": [
+            "Go",
+            "PostgreSQL",
+            "Kubernetes",
+            "Docker"
+        ],
+        "sueldo": "50.000 - 70.000 USD",
+        "tipo_contrato": "Full-time",
+        "publicado": "Hace 2 días",
+        "logo_empresa": "https://lh3.googleusercontent.com/aida-public/AB6AXuDdsfZI24VB0JttscIQqqPh2efk0q-fBnYA8Z4HZepYZtRaQ1bDoEy2IV3DONOz9j2Oan7YAiHZXz1SPVc95Z-eEXLxwXeBCitZ-BRpJ3lTmytwqK2vFJrId9XoOfxob8G8sI6Y3KN2X3EvxuqFUQGq0ydswxL2X7Ab_g_k4vY_BXTq0THlOhCzR0I0k5Jd7TRujZ0iP7XwpsVIIG0Ur4kOrnkNfpaVmiHABhs2czM7Cm6Vtn-O2vG2EVbRAEynwl6Uh6oK_p8FpzE"
+    },
+    {
+        "id": 2,
+        "titulo": "Frontend Developer (React)",
+        "empresa": "CodeCrafters Inc.",
+        "ubicacion": "LATAM",
+        "modalidad": "Remoto",
+        "tecnologias": [
+            "React",
+            "TypeScript",
+            "Next.js",
+            "Docker"
+        ],
+        "sueldo": "45.000 - 65.000 USD",
+        "tipo_contrato": "Part-time",
+        "publicado": "Publicado hoy",
+        "logo_empresa": "https://lh3.googleusercontent.com/aida-public/AB6AXuC9dO8Db18Jzymt8frlwgvuGxGzOYf8PdHsSqlF8rzu2y1K5HcieZyZBoSMEqojNYIXHCSGXtlJUxovseL_LhQSy_CJs1V3c3Cs68N8z3awA3wv4bPr4YA01JfyJiCb8aU-vhmibyAMun18CaedPluuU1wFY32NkfLRf92lYJydulJeIEOrj4-9Vklx9jgot5OflTaZ3lI6TUrAjiYKW5NyWQTlaM-G2jwUSxJ3kRSwiZfwDNverH4ns--oHbyN-vIrRd2I6z-jCSI"
+    },
+    {
+        "id": 3,
+        "titulo": "Data Scientist",
+        "empresa": "DataDriven Corp",
+        "ubicacion": "Barcelona, España",
+        "modalidad": "Presencial",
+        "tecnologias": [
+            "Python",
+            "TensorFlow",
+            "Scikit-learn",
+            "Docker"
+        ],
+        "sueldo": "60.000 - 80.000 USD",
+        "tipo_contrato": "Freelance",
+        "publicado": "Publicado hace 5 días",
+        "logo_empresa": "https://lh3.googleusercontent.com/aida-public/AB6AXuBwv-oZq_1I0DydPf6Zv65vRMcQFLx1UyC9iKMHKv-PQzM2f_IyyHdHrA4-tKGaqnK01YNH1OVHUikHqtdkOoM88N5VDbmI8tUZObRWUF2t8TIGDt68Oe3ojcTEjf7Us6gYgGPZCS-FbE2HysGMBLHxM0JI9CyBarc_PX2CHJVkXh3lLQGWIG8M7_NAr0vzf1F_psv3RmZ1I2UNeLLgLJsc51SHd13tgpVnQC8seMGrh-kOdT6MIeZnwZjXQDP3dSRe_Po3hxUcY88"
+    },
+    {
+        "id": 4,
+        "titulo": "DevOps Enginner",
+        "empresa": "CloudNative Solutions",
+        "ubicacion": "Global",
+        "modalidad": "Remoto",
+        "tecnologias": [
+            "AWS",
+            "Docker",
+            "Terraform"
+        ],
+        "sueldo": "70.000 - 90.000 USD",
+        "tipo_contrato": "Freelance",
+        "publicado": "Publicado hace 1 semana",
+        "logo_empresa": "https://lh3.googleusercontent.com/aida-public/AB6AXuBKLVr_D0LArrsxDm--9XCoGNj_7urxh3fDiQU4j-ygWoVGPslwhsyn-ZfgZgGghJEzV9exVOYzLIUM6_kFetHOn8geXrfw4FEpreT5IPC3_zwJfsd9w4QdND2ezxyQDiXQ6ga9pxCSDFDlijxOBB8lPympSZC09568WkTNDqasH_mbz02qzwr17b2WmzEBiiRsk2_5fUG5iAT2hkjtvGzVrKIKWCnWQGOlRdIdAYn4NUPiODCZISLmkmZcko2k0fAHPiGjPbDwJy8"
+    },
+    {
+        "id": 5,
+        "titulo": "Frontend Developer React",
+        "empresa": "TechFlow Systems",
+        "ubicacion": "Buenos Aires, Argentina",
+        "modalidad": "Remoto",
+        "tecnologias": [
+            "React",
+            "TailwindCSS",
+            "TypeScript",
+            "Vite"
+        ],
+        "sueldo": "35.000 - 45.000 USD",
+        "tipo_contrato": "Full-time",
+        "publicado": "Hace 5 horas",
+        "logo_empresa": "https://ui-avatars.com/api/?name=TechFlow&background=random"
+    },
+    {
+        "id": 6,
+        "titulo": "Full Stack Developer (MERN)",
+        "empresa": "StartUp Rocket",
+        "ubicacion": "Ciudad de México, México",
+        "modalidad": "Presencial",
+        "tecnologias": [
+            "MongoDB",
+            "Express",
+            "React",
+            "Node.js"
+        ],
+        "sueldo": "40.000 - 55.000 USD",
+        "tipo_contrato": "Full-time",
+        "publicado": "Hace 1 semana",
+        "logo_empresa": "https://ui-avatars.com/api/?name=StartUp&background=random"
+    },
+    {
+        "id": 7,
+        "titulo": "Diseñador UI/UX & Maquetador",
+        "empresa": "Creative Studio",
+        "ubicacion": "Bogotá, Colombia",
+        "modalidad": "Remoto",
+        "tecnologias": [
+            "Figma",
+            "HTML",
+            "CSS",
+            "Sass"
+        ],
+        "sueldo": "20.000 - 30.000 USD",
+        "tipo_contrato": "Freelance",
+        "publicado": "Hace 3 días",
+        "logo_empresa": "https://ui-avatars.com/api/?name=Creative&background=random"
+    },
+    {
+        "id": 8,
+        "titulo": "DevOps Engineer Junior",
+        "empresa": "Cloud Ninjas",
+        "ubicacion": "Santiago, Chile",
+        "modalidad": "Remoto",
+        "tecnologias": [
+            "AWS",
+            "Python",
+            "Linux",
+            "Terraform"
+        ],
+        "sueldo": "30.000 - 40.000 USD",
+        "tipo_contrato": "Part-time",
+        "publicado": "Hace 1 día",
+        "logo_empresa": "https://ui-avatars.com/api/?name=Cloud+Ninjas&background=random"
+    },
+    {
+        "id": 9,
+        "titulo": "Desarrollador de Software Senior",
+        "empresa": "Tech Solutions Inc.",
+        "ubicacion": "Estocolmo, Suecia",
+        "modalidad": "Remoto",
+        "tecnologias": [
+                "react",
+                "node",
+                "javascript"
+        ],
+        "sueldo":"20.000 - 30.000 USD",
+        "tipo_contrato":"Full-time",
+        "publicado":"Publicado hace 5 días",    
+        "logo_empresa":"https://lh3.googleusercontent.com/aida-public/AB6AXuBKLVr_D0LArrsxDm--9XCoGNj_7urxh3fDiQU4j-ygWoVGPslwhsyn-ZfgZgGghJEzV9exVOYzLIUM6_kFetHOn8geXrfw4FEpreT5IPC3_zwJfsd9w4QdND2ezxyQDiXQ6ga9pxCSDFDlijxOBB8lPympSZC09568WkTNDqasH_mbz02qzwr17b2WmzEBiiRsk2_5fUG5iAT2hkjtvGzVrKIKWCnWQGOlRdIdAYn4NUPiODCZISLmkmZcko2k0fAHPiGjPbDwJy8"
+    },
+    {
+    "id": 10,
+    "titulo": "Analista de Datos",
+    "empresa": "Data Driven Co.",
+    "ubicacion": "Ciudad de México",
+    "modalidad": "Remoto",
+    "tecnologias": [
+                "python",
+                "cdmx",
+                "django"
+    ],
+        "sueldo":"20.000 - 30.000 USD",
+        "tipo_contrato":"Full-time",
+        "publicado":"Publicado hace 5 días",    
+        "logo_empresa": "https://lh3.googleusercontent.com/aida-public/AB6AXuC9dO8Db18Jzymt8frlwgvuGxGzOYf8PdHsSqlF8rzu2y1K5HcieZyZBoSMEqojNYIXHCSGXtlJUxovseL_LhQSy_CJs1V3c3Cs68N8z3awA3wv4bPr4YA01JfyJiCb8aU-vhmibyAMun18CaedPluuU1wFY32NkfLRf92lYJydulJeIEOrj4-9Vklx9jgot5OflTaZ3lI6TUrAjiYKW5NyWQTlaM-G2jwUSxJ3kRSwiZfwDNverH4ns--oHbyN-vIrRd2I6z-jCSI"
+    }
+]
