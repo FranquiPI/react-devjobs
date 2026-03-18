@@ -1,13 +1,13 @@
-import { Filters } from "./Filters.jsx";
-import { JobListing } from "./JobListing.jsx";
-import { Pagination } from "./Pagination.jsx";
-import { useState } from "react";
-import { JobsContainer } from "./JobsContainer.jsx";
+import { Filters } from "../components/Filters.jsx";
+import { JobListing } from "../components/JobListing.jsx";
+import { Pagination } from "../components/Pagination.jsx";
+import { useEffect, useState } from "react";
+import { JobsContainer } from "../components/JobsContainer.jsx";
 import jobsData from "../data/jobs.json";
 
 const RESULT_PER_PAGE = 4;
 
-export function MainContent() {
+export function SearchPage() {
   // 1. Estados
   const [filters, setFilters] = useState({
     technology: "",
@@ -56,6 +56,8 @@ export function MainContent() {
           return job.titulo?.toLowerCase().includes(textToFilter.toLowerCase());
         });
 
+  
+
   // 4. Paginación
   /* Y luego renderizamos el pagination */
   const totalPages = Math.ceil(jobsWithTextFilter.length / RESULT_PER_PAGE);
@@ -64,6 +66,12 @@ export function MainContent() {
     (currentPage - 1) * RESULT_PER_PAGE,
     currentPage * RESULT_PER_PAGE,
   );
+
+  // Use effect para cambiar el titulo del documento
+  useEffect(() => {
+    document.title = `Resultados: ${jobsWithTextFilter.length} - Pagina ${currentPage} - DevJobs `   
+  }, [jobsWithTextFilter, currentPage])
+
 
   // 5. Render
   return (

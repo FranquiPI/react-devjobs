@@ -1,6 +1,10 @@
 import { useId, useState } from "react"
 
-export function Filters({ onSearch, onTextFilter }) {
+// Custom Hook para encapsular la lógica del formulario
+const useSearchForm = ({ onSearch, onTextFilter }) => {
+    
+    // const [searchText, setSearchText] = useState('')
+    // Este estado: guarda el texto introducido por el usuario, se actualiza en handleChange, sera devuelto al componente para mostrarlo en el input
 
     /* Search input useId */
     const textId = useId()
@@ -34,6 +38,8 @@ export function Filters({ onSearch, onTextFilter }) {
         onSearch(filters)
     }
     
+    //MANAEJADORES
+
     const handleTechnologyChange = (tech) => {
         setSelectedTech(selectedTech === tech ? '' : tech)
     }
@@ -58,7 +64,52 @@ export function Filters({ onSearch, onTextFilter }) {
         onSearch({ technology: '', location: '', contract: '' })
     }
 
-    
+    // RETORNA TODO LO QUE NECESITA EL COMPONENTE
+    return {
+        // IDs
+        textId,
+        locationId,
+        technologyBaseId,
+        contractBaseId,
+        // Estado
+        selectedTech,
+        selectedContract,
+        location,
+        // Datos
+        technologies,
+        contractTypes,
+        // Handlers
+        handleTechnologyChange,
+        handleContractChange,
+        handleLocationChange,
+        handleTextChange,
+        handleClearFilters,
+        applyFilters
+    }
+
+}
+
+
+export function Filters({ onSearch, onTextFilter }) {
+
+    const {
+        textId, 
+        locationId, 
+        technologyBaseId, 
+        contractBaseId,
+        selectedTech,
+        selectedContract,
+        location,
+        technologies,
+        contractTypes,
+        handleTechnologyChange,
+        handleContractChange,
+        handleLocationChange,
+        handleTextChange,
+        handleClearFilters,
+        applyFilters
+    } = useSearchForm({ onSearch, onTextFilter })
+
     return (
         <>
             {/* <!-- Left Column: Filters--> */}
