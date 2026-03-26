@@ -1,10 +1,16 @@
-export function JobCard({ job }) {
+import { useRouter } from "../hooks/useRouter"
+import { JobDetail } from "../pages/JobDetail"
 
+export function JobCard({ job }) {
+    
     const { titulo: title, empresa: company, ubicacion: location, sueldo: salary, logo_empresa: logo, modalidad: modality, tecnologias: technology, publicado: publicado} = job
+    
+    const {navigateTo} = useRouter()
+
     return (
         <>
-            {/* <!--Card 1--> */}
-            <article className='job-card flex flex-col sm:flex-row items-start gap-4 p-4 rounded-xl border border-border-light bg-white hover:border-primary transition-colors cursor-pointer'>
+            
+            <article onClick={() => navigateTo(`/job/${job.id}`)} className='job-card flex flex-col sm:flex-row items-start gap-4 p-4 rounded-xl border border-border-light bg-white hover:border-primary transition-colors cursor-pointer'>
                 <div className="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-12" data-alt={{company}} style={{ backgroundImage: `url(${logo})` }}></div>
                 
                 <header className="flex-1">

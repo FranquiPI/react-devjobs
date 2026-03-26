@@ -14,7 +14,8 @@
         "sueldo": "50.000 - 70.000 USD",
         "tipo_contrato": "Full-time",
         "publicado": "Hace 2 días",
-        "logo_empresa": "https://lh3.googleusercontent.com/aida-public/AB6AXuDdsfZI24VB0JttscIQqqPh2efk0q-fBnYA8Z4HZepYZtRaQ1bDoEy2IV3DONOz9j2Oan7YAiHZXz1SPVc95Z-eEXLxwXeBCitZ-BRpJ3lTmytwqK2vFJrId9XoOfxob8G8sI6Y3KN2X3EvxuqFUQGq0ydswxL2X7Ab_g_k4vY_BXTq0THlOhCzR0I0k5Jd7TRujZ0iP7XwpsVIIG0Ur4kOrnkNfpaVmiHABhs2czM7Cm6Vtn-O2vG2EVbRAEynwl6Uh6oK_p8FpzE"
+        "logo_empresa": "https://lh3.googleusercontent.com/aida-public/AB6AXuDdsfZI24VB0JttscIQqqPh2efk0q-fBnYA8Z4HZepYZtRaQ1bDoEy2IV3DONOz9j2Oan7YAiHZXz1SPVc95Z-eEXLxwXeBCitZ-BRpJ3lTmytwqK2vFJrId9XoOfxob8G8sI6Y3KN2X3EvxuqFUQGq0ydswxL2X7Ab_g_k4vY_BXTq0THlOhCzR0I0k5Jd7TRujZ0iP7XwpsVIIG0Ur4kOrnkNfpaVmiHABhs2czM7Cm6Vtn-O2vG2EVbRAEynwl6Uh6oK_p8FpzE",
+        "experience_level": "Senior"
     },
     {
         "id": 2,
@@ -31,7 +32,8 @@
         "sueldo": "45.000 - 65.000 USD",
         "tipo_contrato": "Part-time",
         "publicado": "Publicado hoy",
-        "logo_empresa": "https://lh3.googleusercontent.com/aida-public/AB6AXuC9dO8Db18Jzymt8frlwgvuGxGzOYf8PdHsSqlF8rzu2y1K5HcieZyZBoSMEqojNYIXHCSGXtlJUxovseL_LhQSy_CJs1V3c3Cs68N8z3awA3wv4bPr4YA01JfyJiCb8aU-vhmibyAMun18CaedPluuU1wFY32NkfLRf92lYJydulJeIEOrj4-9Vklx9jgot5OflTaZ3lI6TUrAjiYKW5NyWQTlaM-G2jwUSxJ3kRSwiZfwDNverH4ns--oHbyN-vIrRd2I6z-jCSI"
+        "logo_empresa": "https://lh3.googleusercontent.com/aida-public/AB6AXuC9dO8Db18Jzymt8frlwgvuGxGzOYf8PdHsSqlF8rzu2y1K5HcieZyZBoSMEqojNYIXHCSGXtlJUxovseL_LhQSy_CJs1V3c3Cs68N8z3awA3wv4bPr4YA01JfyJiCb8aU-vhmibyAMun18CaedPluuU1wFY32NkfLRf92lYJydulJeIEOrj4-9Vklx9jgot5OflTaZ3lI6TUrAjiYKW5NyWQTlaM-G2jwUSxJ3kRSwiZfwDNverH4ns--oHbyN-vIrRd2I6z-jCSI",
+        "experience_level": "Mid"
     },
     {
         "id": 3,
@@ -48,7 +50,8 @@
         "sueldo": "60.000 - 80.000 USD",
         "tipo_contrato": "Freelance",
         "publicado": "Publicado hace 5 días",
-        "logo_empresa": "https://lh3.googleusercontent.com/aida-public/AB6AXuBwv-oZq_1I0DydPf6Zv65vRMcQFLx1UyC9iKMHKv-PQzM2f_IyyHdHrA4-tKGaqnK01YNH1OVHUikHqtdkOoM88N5VDbmI8tUZObRWUF2t8TIGDt68Oe3ojcTEjf7Us6gYgGPZCS-FbE2HysGMBLHxM0JI9CyBarc_PX2CHJVkXh3lLQGWIG8M7_NAr0vzf1F_psv3RmZ1I2UNeLLgLJsc51SHd13tgpVnQC8seMGrh-kOdT6MIeZnwZjXQDP3dSRe_Po3hxUcY88"
+        "logo_empresa": "https://lh3.googleusercontent.com/aida-public/AB6AXuBwv-oZq_1I0DydPf6Zv65vRMcQFLx1UyC9iKMHKv-PQzM2f_IyyHdHrA4-tKGaqnK01YNH1OVHUikHqtdkOoM88N5VDbmI8tUZObRWUF2t8TIGDt68Oe3ojcTEjf7Us6gYgGPZCS-FbE2HysGMBLHxM0JI9CyBarc_PX2CHJVkXh3lLQGWIG8M7_NAr0vzf1F_psv3RmZ1I2UNeLLgLJsc51SHd13tgpVnQC8seMGrh-kOdT6MIeZnwZjXQDP3dSRe_Po3hxUcY88",
+        "experience_level": "Senior"
     },
     {
         "id": 4,
@@ -64,7 +67,8 @@
         "sueldo": "70.000 - 90.000 USD",
         "tipo_contrato": "Freelance",
         "publicado": "Publicado hace 1 semana",
-        "logo_empresa": "https://lh3.googleusercontent.com/aida-public/AB6AXuBKLVr_D0LArrsxDm--9XCoGNj_7urxh3fDiQU4j-ygWoVGPslwhsyn-ZfgZgGghJEzV9exVOYzLIUM6_kFetHOn8geXrfw4FEpreT5IPC3_zwJfsd9w4QdND2ezxyQDiXQ6ga9pxCSDFDlijxOBB8lPympSZC09568WkTNDqasH_mbz02qzwr17b2WmzEBiiRsk2_5fUG5iAT2hkjtvGzVrKIKWCnWQGOlRdIdAYn4NUPiODCZISLmkmZcko2k0fAHPiGjPbDwJy8"
+        "logo_empresa": "https://lh3.googleusercontent.com/aida-public/AB6AXuBKLVr_D0LArrsxDm--9XCoGNj_7urxh3fDiQU4j-ygWoVGPslwhsyn-ZfgZgGghJEzV9exVOYzLIUM6_kFetHOn8geXrfw4FEpreT5IPC3_zwJfsd9w4QdND2ezxyQDiXQ6ga9pxCSDFDlijxOBB8lPympSZC09568WkTNDqasH_mbz02qzwr17b2WmzEBiiRsk2_5fUG5iAT2hkjtvGzVrKIKWCnWQGOlRdIdAYn4NUPiODCZISLmkmZcko2k0fAHPiGjPbDwJy8",
+        "experience_level": "Senior"
     },
     {
         "id": 5,
@@ -81,7 +85,8 @@
         "sueldo": "35.000 - 45.000 USD",
         "tipo_contrato": "Full-time",
         "publicado": "Hace 5 horas",
-        "logo_empresa": "https://ui-avatars.com/api/?name=TechFlow&background=random"
+        "logo_empresa": "https://ui-avatars.com/api/?name=TechFlow&background=random",
+        "experience_level": "Mid"
     },
     {
         "id": 6,
@@ -98,7 +103,8 @@
         "sueldo": "40.000 - 55.000 USD",
         "tipo_contrato": "Full-time",
         "publicado": "Hace 1 semana",
-        "logo_empresa": "https://ui-avatars.com/api/?name=StartUp&background=random"
+        "logo_empresa": "https://ui-avatars.com/api/?name=StartUp&background=random",
+        "experience_level": "Mid"
     },
     {
         "id": 7,
@@ -115,7 +121,8 @@
         "sueldo": "20.000 - 30.000 USD",
         "tipo_contrato": "Freelance",
         "publicado": "Hace 3 días",
-        "logo_empresa": "https://ui-avatars.com/api/?name=Creative&background=random"
+        "logo_empresa": "https://ui-avatars.com/api/?name=Creative&background=random",
+        "experience_level": "Mid"
     },
     {
         "id": 8,
@@ -132,7 +139,8 @@
         "sueldo": "30.000 - 40.000 USD",
         "tipo_contrato": "Part-time",
         "publicado": "Hace 1 día",
-        "logo_empresa": "https://ui-avatars.com/api/?name=Cloud+Ninjas&background=random"
+        "logo_empresa": "https://ui-avatars.com/api/?name=Cloud+Ninjas&background=random",
+        "experience_level": "Junior"
     },
     {
         "id": 9,
@@ -148,7 +156,8 @@
         "sueldo":"20.000 - 30.000 USD",
         "tipo_contrato":"Full-time",
         "publicado":"Publicado hace 5 días",    
-        "logo_empresa":"https://lh3.googleusercontent.com/aida-public/AB6AXuBKLVr_D0LArrsxDm--9XCoGNj_7urxh3fDiQU4j-ygWoVGPslwhsyn-ZfgZgGghJEzV9exVOYzLIUM6_kFetHOn8geXrfw4FEpreT5IPC3_zwJfsd9w4QdND2ezxyQDiXQ6ga9pxCSDFDlijxOBB8lPympSZC09568WkTNDqasH_mbz02qzwr17b2WmzEBiiRsk2_5fUG5iAT2hkjtvGzVrKIKWCnWQGOlRdIdAYn4NUPiODCZISLmkmZcko2k0fAHPiGjPbDwJy8"
+        "logo_empresa":"https://lh3.googleusercontent.com/aida-public/AB6AXuBKLVr_D0LArrsxDm--9XCoGNj_7urxh3fDiQU4j-ygWoVGPslwhsyn-ZfgZgGghJEzV9exVOYzLIUM6_kFetHOn8geXrfw4FEpreT5IPC3_zwJfsd9w4QdND2ezxyQDiXQ6ga9pxCSDFDlijxOBB8lPympSZC09568WkTNDqasH_mbz02qzwr17b2WmzEBiiRsk2_5fUG5iAT2hkjtvGzVrKIKWCnWQGOlRdIdAYn4NUPiODCZISLmkmZcko2k0fAHPiGjPbDwJy8",
+        "experience_level": "Senior"
     },
     {
     "id": 10,
@@ -164,6 +173,7 @@
         "sueldo":"20.000 - 30.000 USD",
         "tipo_contrato":"Full-time",
         "publicado":"Publicado hace 5 días",    
-        "logo_empresa": "https://lh3.googleusercontent.com/aida-public/AB6AXuC9dO8Db18Jzymt8frlwgvuGxGzOYf8PdHsSqlF8rzu2y1K5HcieZyZBoSMEqojNYIXHCSGXtlJUxovseL_LhQSy_CJs1V3c3Cs68N8z3awA3wv4bPr4YA01JfyJiCb8aU-vhmibyAMun18CaedPluuU1wFY32NkfLRf92lYJydulJeIEOrj4-9Vklx9jgot5OflTaZ3lI6TUrAjiYKW5NyWQTlaM-G2jwUSxJ3kRSwiZfwDNverH4ns--oHbyN-vIrRd2I6z-jCSI"
+        "logo_empresa": "https://lh3.googleusercontent.com/aida-public/AB6AXuC9dO8Db18Jzymt8frlwgvuGxGzOYf8PdHsSqlF8rzu2y1K5HcieZyZBoSMEqojNYIXHCSGXtlJUxovseL_LhQSy_CJs1V3c3Cs68N8z3awA3wv4bPr4YA01JfyJiCb8aU-vhmibyAMun18CaedPluuU1wFY32NkfLRf92lYJydulJeIEOrj4-9Vklx9jgot5OflTaZ3lI6TUrAjiYKW5NyWQTlaM-G2jwUSxJ3kRSwiZfwDNverH4ns--oHbyN-vIrRd2I6z-jCSI",
+        "experience_level": "Mid"
     }
 ]

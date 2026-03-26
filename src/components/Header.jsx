@@ -26,7 +26,7 @@ function Header() {
                 {/* Menu Top Navbar */}
                 <div className="hidden lg:flex flex-1 justify-end gap-8 items-center">
                     <nav className="flex items-center gap-9">
-                        <Link className="text-sm font-medium leading-normal hover:text-primary" href="#">Para empresas</Link>
+                        <Link className="text-sm font-medium leading-normal hover:text-primary" href="/companies">Para empresas</Link>
                         <Link className="text-sm font-medium leading-normal hover:text-primary" href="/search">Buscar Empleo</Link>
                         <Link className="text-sm font-medium leading-normal hover:text-primary" href="#">Blog</Link>
                         <Link className="text-sm font-medium leading-normal hover:text-primary" href="#">Login/Registrarse</Link>

@@ -3,7 +3,12 @@ import { useRouter } from "../hooks/useRouter";
 export function Route ({ path, component: Component }) {
     const { currentPath } = useRouter()
 
-    if ( currentPath !== path ) return null
+    if ( currentPath !== path ){
+        return null  
+    } else {
+        path = '/job/:id'
+    }
+        
 
     return <Component />
 }

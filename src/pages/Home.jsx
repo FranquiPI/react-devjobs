@@ -5,7 +5,7 @@ import { useRouter } from "../hooks/useRouter"
 export function HomePage() {
     const { navigateTo } = useRouter()
     
-    //MAnejador de formulario principal
+    //Manejador de formulario principal
     const handleSearch = (event) => {
         // prevenimos el  comportamiento por defecto (reload de página)
         event.preventDefault()
