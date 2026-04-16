@@ -6,6 +6,8 @@ import { NotFoundPage } from "./pages/404.jsx";
 import { CompaniesPage } from "./pages/CompaniesPage.jsx";
 
 import { Route } from "./components/Route.jsx";
+import { ExpertPage } from "./pages/ExpertPage.jsx";
+import { Contact } from "./pages/Contact.jsx";
 
 
 function App() {
@@ -18,6 +20,8 @@ function App() {
         <Route path="/" component={HomePage} />
         <Route path="/search" component={SearchPage} />
         <Route path='/companies' component={CompaniesPage}/>
+        <Route path='/expert' component={ExpertPage} />
+        <Route path='/contact' component={Contact} />
 
         <Footer />
       </div>

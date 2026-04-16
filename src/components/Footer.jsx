@@ -3,7 +3,7 @@ function Footer() {
     return (
         <div>
             {/* <!--Footer--> */}
-            <footer className="flex justify-center mt-10 px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40 py-10 w-full bg-content-light border-t border-border-light">
+            <footer className="flex justify-center px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40 py-10 w-full bg-content-light border-t border-border-light">
                 <div className="flex flex-col md:flex-row justify-between items-center gap-6 w-full max-w-7xl">
                     <div className="flex items-center gap-4">
                         <div className="size-5 text-primary">

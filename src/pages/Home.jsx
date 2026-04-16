@@ -1,6 +1,7 @@
 
 import { Link } from "../components/Link"
 import { useRouter } from "../hooks/useRouter"
+import { Contact } from "./Contact"
 
 export function HomePage() {
     const { navigateTo } = useRouter()
@@ -19,6 +20,22 @@ export function HomePage() {
         navigateTo(url)
     }
 
+    // const [formElements, setFormElement] = useState({
+    //     name: '',
+    //     email: '',
+    //     subject: '',
+    //     message: ''
+    // })
+
+    // const handleForm = (newElementsForm) => {
+    //     console.log('Campos recibidos: ', newElementsForm)
+    //     setFormElement({
+    //         name: newElementsForm.name,
+    //         email: newElementsForm.email,
+    //         subject: newElementsForm.subject,
+    //         message: newElementsForm.message,
+    //     })
+    // }
 
     return (
         <>

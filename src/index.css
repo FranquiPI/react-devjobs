@@ -1,7 +1,12 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/geist";
+
 
 @theme {
     --color-primary: #135bec;
+    --color-secondary: #6174b4;
     --color-background-light: #f6f6f8;
     --color-background-dark: #101622;
     --color-content-light: #ffffff;
@@ -12,4 +17,7 @@
     --color-text-dark-secondary: #a2aab8;
     --color-border-light: #dbdfe6;
     --color-border-dark: #343c4a;
+    --color-text-alert: #B93D00;
+    --color-alert: #FFB59B;
+    --color-alert-second: #5C1A00;
 }
