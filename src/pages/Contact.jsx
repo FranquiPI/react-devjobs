@@ -10,7 +10,50 @@ export function Contact(  ) {
         message : '',
     }
     
-    const {form, loading, handleSubmit, handleChange } = useForm(initialData)
+    const onValidate = (form) => {
+        let isError = false
+        let errors = {}
+        let regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
+        let regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
+        let regexComments = /^.{1,255}$/;
+
+        
+        if(!form.nombre.trim()){
+            errors.nombre = 'El campo "Nombre" no debe ser vacío.'
+            isError = true
+        } else if (!regexName.test(form.nombre)){
+            errors.nombre = 'El campo "Nombre" solo acepta letras y espacios.'
+            isError = true
+        }
+
+        if(!form.email.trim()){
+            errors.email = 'El campo "Email" no debe ser vacío.'
+            isError = true
+        } else if (!regexEmail.test(form.email)){
+            errors.email = 'El campo "Email" solo acepta letras y espacios.'
+            isError = true
+        }
+
+        if(!form.subject.trim()){
+            errors.subject = 'El campo "Asunto" no debe ser vacío.'
+            isError = true
+        } else if (!regexName.test(form.subject)){
+            errors.subject = 'El campo "Asunto" solo acepta letras y espacios.'
+            isError = true
+        }
+
+        if(!form.message.trim()){
+            errors.message = 'El campo "Mensaje" no debe ser vacío.'
+            isError = true
+        } else if (!regexComments.test(form.message)){
+            errors.message = 'El campo "Mensaje" solo acepta 255 caracteres.'
+            isError = true
+        }
+
+        return isError ? errors : null
+    }
+
+    const {form, errors, loading, handleSubmit, handleChange } = useForm(initialData, onValidate)
     
     return (
         <>
@@ -36,33 +79,33 @@ export function Contact(  ) {
                             <div className="space-y-2">
                                 <label className="text-sm font-bold tracking-wide text-text-light-primary block" htmlFor='name'>Name</label>
                                 <input required value={form.name} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-border-light focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder:text-secondary-fixed-dim" id={form.name} name='name' placeholder="Alex Rivera" type="text" />
-                                <div className="py-1 px-1 bg-alert border-l border-l-alert-second">
-                                    <p className="text-alert-second text-xs font-bold tracking-tight">Error en el nombre</p>
-                                </div>
+                                {errors.nombre && <div className="py-1 px-1 bg-alert border-l border-l-alert-second">
+                                    <p className="text-alert-second text-xs font-bold tracking-tight">{errors.nombre}</p>
+                                </div>}
                             </div>
                             <div className="space-y-2">
                                 <label className="text-sm font-bold tracking-wide text-text-light-primary block" htmlFor='email'>Email</label>
                                 <input value={form.email} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-border-light focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder:text-secondary-fixed-dim" id={form.email} name='email' placeholder="alex@devjobs.io" type="email" />
-                                <div className="py-1 px-1 bg-alert border-l border-l-alert-second">
-                                    <p className="text-alert-second text-xs font-bold tracking-tight">Error en el email</p>
-                                </div>
+                                {errors.email && <div className="py-1 px-1 bg-alert border-l border-l-alert-second">
+                                    <p className="text-alert-second text-xs font-bold tracking-tight">{errors.email}</p>
+                                </div>}
                             </div>
                         </div>
                         {/* <!-- Subject --> */}
                         <div className="space-y-2">
                             <label className="text-sm font-bold tracking-wide text-text-light-primary block" htmlFor='subject'>Subject</label>
                             <input value={form.subject} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-border-light focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder:text-secondary-fixed-dim" id={form.subject} name='subject' placeholder="How can we help?" type="text" />
-                            <div className="py-1 px-1 bg-alert border-l border-l-alert-second">
-                                    <p className="text-alert-second text-xs font-bold tracking-tight">Error en el asunto</p>
-                                </div>
+                            {errors.subject && <div className="py-1 px-1 bg-alert border-l border-l-alert-second">
+                                    <p className="text-alert-second text-xs font-bold tracking-tight">{errors.subject}</p>
+                            </div> }
                         </div>
                         {/* <!-- Message --> */}
                         <div className="space-y-2">
                             <label className="text-sm font-bold tracking-wide text-text-light-primary block" htmlFor='message'>Message</label>
                             <textarea value={form.message} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-border-light focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder:text-secondary-fixed-dim resize-none" id={form.message} name='message' placeholder="Tell us more about your inquiry..." rows="5"></textarea>
-                            <div className="py-1 px-1 bg-alert border-l border-l-alert-second">
-                                <p className="text-alert-second text-xs font-bold tracking-tight">Error en el mensaje</p>
-                            </div>
+                            {errors.message && <div className="py-1 px-1 bg-alert border-l border-l-alert-second">
+                                <p className="text-alert-second text-xs font-bold tracking-tight">{errors.message}</p>
+                            </div>}
                         </div>
                         {/* <!-- Submit Button --> */}
                         <button className="w-full bg-primary text-content-light py-4 rounded-lg font-bold tracking-wide hover:bg-primary/95 transition-all scale-95 active:opacity-80 flex items-center justify-center gap-2" type="submit">
