@@ -4,14 +4,13 @@ import Aurora from "../components/Aurora"
 export function Contact(  ) {
     
     const initialData = {
-        name : '',
+        nombre : '',
         email : '',
         subject : '',
         message : '',
     }
     
     const onValidate = (form) => {
-        let isError = false
         let errors = {}
         let regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
         let regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
@@ -20,40 +19,40 @@ export function Contact(  ) {
         
         if(!form.nombre.trim()){
             errors.nombre = 'El campo "Nombre" no debe ser vacío.'
-            isError = true
+            
         } else if (!regexName.test(form.nombre)){
             errors.nombre = 'El campo "Nombre" solo acepta letras y espacios.'
-            isError = true
+            
         }
 
         if(!form.email.trim()){
             errors.email = 'El campo "Email" no debe ser vacío.'
-            isError = true
+            
         } else if (!regexEmail.test(form.email)){
             errors.email = 'El campo "Email" solo acepta letras y espacios.'
-            isError = true
+        
         }
 
         if(!form.subject.trim()){
             errors.subject = 'El campo "Asunto" no debe ser vacío.'
-            isError = true
+            
         } else if (!regexName.test(form.subject)){
             errors.subject = 'El campo "Asunto" solo acepta letras y espacios.'
-            isError = true
+            
         }
 
         if(!form.message.trim()){
             errors.message = 'El campo "Mensaje" no debe ser vacío.'
-            isError = true
+            
         } else if (!regexComments.test(form.message)){
             errors.message = 'El campo "Mensaje" solo acepta 255 caracteres.'
-            isError = true
+            
         }
 
-        return isError ? errors : null
+        return errors
     }
 
-    const {form, errors, loading, handleSubmit, handleChange } = useForm(initialData, onValidate)
+    const {form, errors, loading, success, handleSubmit, handleChange } = useForm(initialData, onValidate)
     
     return (
         <>
@@ -78,7 +77,7 @@ export function Contact(  ) {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="space-y-2">
                                 <label className="text-sm font-bold tracking-wide text-text-light-primary block" htmlFor='name'>Name</label>
-                                <input required value={form.name} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-border-light focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder:text-secondary-fixed-dim" id={form.name} name='name' placeholder="Alex Rivera" type="text" />
+                                <input value={form.nombre} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-border-light focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder:text-secondary-fixed-dim" id={form.nombre} name='nombre' placeholder="Alex Rivera" type="text" />
                                 {errors.nombre && <div className="py-1 px-1 bg-alert border-l border-l-alert-second">
                                     <p className="text-alert-second text-xs font-bold tracking-tight">{errors.nombre}</p>
                                 </div>}
@@ -108,9 +107,11 @@ export function Contact(  ) {
                             </div>}
                         </div>
                         {/* <!-- Submit Button --> */}
-                        <button className="w-full bg-primary text-content-light py-4 rounded-lg font-bold tracking-wide hover:bg-primary/95 transition-all scale-95 active:opacity-80 flex items-center justify-center gap-2" type="submit">
-                            Send Message
-                            <span className="material-symbols-outlined text-lg" data-icon="send">send</span>
+                        <button disabled={loading} className="w-full bg-primary text-content-light py-4 rounded-lg font-bold tracking-wide hover:bg-primary/95 transition-all scale-95 active:opacity-80 flex items-center justify-center gap-2" type="submit">
+                            <span>{loading ? 'Enviando...' : success ? 'Enviado' : 'Enviar'}</span>
+                            <span className="material-symbols-outlined text-lg" data-icon={success ? "check_circle" : "send"}>
+                                {success ? "check_circle" : "send"}
+                            </span>
                         </button>
                     </form>
 
