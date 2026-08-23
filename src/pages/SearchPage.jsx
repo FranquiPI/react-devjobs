@@ -3,8 +3,14 @@ import { Filters } from "../components/Filters.jsx";
 import { Pagination } from "../components/Pagination.jsx";
 import { JobsContainer } from "../components/JobsContainer.jsx";
 import { useEffect, useState } from "react";
+import Spinner from "../components/Spinner.jsx";
 
 const RESULT_PER_PAGE = 4;
+const LOADING_DELAY = 3000;
+
+function wait(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
 
 function useFilters() {
     // 1. Estados
@@ -33,34 +39,56 @@ function useFilters() {
   const [total, setTotal] = useState(0)
 
   useEffect(() => {
+    let ignore = false;
+
     // Función asíncrona dentro del efecto
     async function fetchJobs(){
       try {
         // 1. Indicar que estamos cargando
         setLoading(true)
 
+        const params = new URLSearchParams()
+        if (textToFilter) params.append('text', textToFilter)
+        if (filters.technology) params.append('technology', filters.technology)
+        if (filters.location) params.append('types', filters.location)
+        if (filters.experienceLevel) params.append('experienceLevel', filters.experienceLevel)
+        
+        const offset = (currentPage - 1) * RESULT_PER_PAGE
+        params.append('limit', RESULT_PER_PAGE)
+        params.append('offset', offset)
+        
+        const queryParams = params.toString()
+
         // 2. Hacer la petición
-        const response = await fetch('https://jscamp-api.vercel.app/api/jobs')
+        const response = await fetch(`https://jscamp-api.vercel.app/api/jobs?${queryParams}`)
         const json = await response.json()
 
-        console.log(json)
-        console.log(json.data[0])
 
         //3. Guardar los datos
-        setJobs(json.data)
-        setTotal(json.total)
+        if (!ignore) {
+          setJobs(json.data)
+          setTotal(json.total)
+        }
       } catch(error){
         // 4. Manejar errores
         console.error('Error al cargar empleos:', error)
       } finally {
+        await wait(LOADING_DELAY)
+
         // 5. Indicar que terminamos de cargar
-        setLoading(false)
+        if (!ignore) {
+          setLoading(false)
+        }
       }
     }
 
     //Llamamos a la función
     fetchJobs()
-  }, []) // Dependencias vacías = solo al montar
+
+    return () => {
+      ignore = true;
+    }
+  }, [filters, textToFilter, currentPage])
 
     // 2. Handlers
     const handleSearch = (newFilters) => {
@@ -102,7 +130,7 @@ function useFilters() {
 
     // 4. Paginación
     /* Y luego renderizamos el pagination */
-    const totalPages = Math.ceil(jobs / RESULT_PER_PAGE);
+    const totalPages = Math.ceil(total / RESULT_PER_PAGE);
 
     // const pagedResult = jobsWithTextFilter.slice(
     //     (currentPage - 1) * RESULT_PER_PAGE,
@@ -164,16 +192,21 @@ export function SearchPage() {
           </aside>
 
           <section className="md:col-span-9 flex flex-col">
-            {
-              loading ? <p>Cargando empleos...</p> : <JobsContainer jobs={jobs} />
-            }
+            {loading ? (
+              <Spinner />
+            ) : jobs.length === 0 ? (
+              <p className="p-3.5 text-sm text-white font-bold bg-red-700 rounded-lg text-balance text-center">
+                No se han encontrado empleos que coincidan con los criterios de busqueda
+              </p>
+            ) : (
+              <JobsContainer jobs={jobs} />
+            )}
             {/* <JobListing
               total={total}
               // `visibleCount={pagedResult.length}
               // totalCount={jobsWithTextFilter.length}
               // totalPages={totalPages}`
             /> */}
-            <JobsContainer jobs={jobs} total={total} />
             <Pagination
               currentPage={currentPage}
               totalPages={totalPages}
