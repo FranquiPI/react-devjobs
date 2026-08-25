@@ -166,20 +166,17 @@ export function SearchPage() {
     total } 
     = useFilters()
 
-    // Use effect para cambiar el titulo del documento
-    useEffect(() => {
-            if (total === ''){
-                document.title = `DevJobs - Página${currentPage}`
-            } else {
-                document.title = `Resultados: ${total} - Pagina ${currentPage} - DevJobs`;
-            }
-    }, [total, currentPage]);
+
+    const title = loading
+      ? `Cargando... - DevJobs - Página${currentPage}`
+      :  `Resultados: ${total} - Pagina ${currentPage} - DevJobs`
 
 
-  // 5. Render
+    // 5. Render
   return (
     <>
       <main className="flex flex-col px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40 py-8 gap-6">
+        <title>{title}</title>
         <header className="flex flex-col gap-2">
           <h1 className="text-4xl md:text-5xl font-black leading-tight tracking-tight text-text-light-primary">
             Ofertas de Empleo para Developers

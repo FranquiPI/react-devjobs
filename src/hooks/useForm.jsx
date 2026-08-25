@@ -12,6 +12,7 @@ const useForm = (initialData, onValidate) => {
         setForm({ ...form, [name]: value });
     };
 
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const err = onValidate(form); //Creamos una nueva constante
