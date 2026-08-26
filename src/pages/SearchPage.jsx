@@ -6,11 +6,11 @@ import { useEffect, useState } from "react";
 import Spinner from "../components/Spinner.jsx";
 
 const RESULT_PER_PAGE = 4;
-const LOADING_DELAY = 3000;
+const LOADING_DELAY = 2000;
 
-function wait(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
+// function wait(ms) {
+//   return new Promise((resolve) => setTimeout(resolve, ms));
+// }
 
 function useFilters() {
     // 1. Estados
@@ -73,7 +73,8 @@ function useFilters() {
         // 4. Manejar errores
         console.error('Error al cargar empleos:', error)
       } finally {
-        await wait(LOADING_DELAY)
+        // await wait(LOADING_DELAY)
+        
 
         // 5. Indicar que terminamos de cargar
         if (!ignore) {

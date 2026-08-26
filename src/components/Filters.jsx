@@ -1,5 +1,7 @@
 import { useId, useState } from "react"
 
+let timeoutId = null 
+
 // Custom Hook para encapsular la lógica del formulario
 const useSearchForm = ({ onSearch, onTextFilter }) => {
     
@@ -54,7 +56,18 @@ const useSearchForm = ({ onSearch, onTextFilter }) => {
 
     const handleTextChange = (event) => {
         const text = event.target.value
-        onTextFilter(text)
+        // Actualizamos el input inmediatamente
+//      setSearchText(text) 
+
+        // DEBOUNCE: Cancelar el timeout anterior
+        if (timeoutId) {
+            clearTimeout(timeoutId)
+        }
+
+        timeoutId = setTimeout(() => {
+            onTextFilter(text)
+
+        }, 1000) //<-- Tiempo de Delay
     }
     
     const handleClearFilters = () => {
