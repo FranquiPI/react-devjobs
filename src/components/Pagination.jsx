@@ -49,6 +49,12 @@ export function Pagination({ currentPage, totalPages, onPageChange}) {
         }
     }
 
+    const buildPageUrl = (page) => {
+        const url = new URL(window.location)
+        url.searchParams.set('page', page)
+        return `${url.pathname}?${url.searchParams.toString()}`
+    }
+
 
 
 
@@ -60,6 +66,7 @@ export function Pagination({ currentPage, totalPages, onPageChange}) {
                 {/* BOTÓN "ANTERIOR" - Navega a la página anterior */}
                 <button
                     onClick={handlePrevClick}
+                    href= {buildPageUrl(currentPage-1)}
                     id="btnAnterior" 
                     style={stylePrevButton} //Aplica estilos dinámicos (opacidad y cursor)
                     className="flex items-center text-sm font-medium gap-2 px-4 h-9 text-text-light-secondary bg-content-light border border-border-light rounded-lg hover:bg-primary/10 transition-colors">
@@ -84,7 +91,7 @@ export function Pagination({ currentPage, totalPages, onPageChange}) {
                     {pages.map(page => (
                         <a 
                             key={page}  //* key: necesario en React para identificar cada elemento en la lista */}
-                            href="#"    //* href: placeholder (generalmente se reemplaza con navegación real) */}
+                            href={buildPageUrl(page)}    //* href: placeholder (generalmente se reemplaza con navegación real) */}
                             //* Clases condicionales: si es la página actual, muestra con fondo azul */}
                             className={currentPage === page 
                                 ? 'flex items-center justify-center w-9 h-9 rounded-lg text-sm font-medium text-white bg-primary' 
@@ -100,7 +107,8 @@ export function Pagination({ currentPage, totalPages, onPageChange}) {
 
                 {/* BOTÓN "SIGUIENTE" - Navega a la siguiente página */}
                 <button
-                    onClick={handleNextClick} 
+                    onClick={handleNextClick}
+                    href={buildPageUrl(currentPage + 1)} 
                     id="btnSiguiente" 
                     style={styleNextButton}  //* Aplica estilos dinámicos (opacidad y cursor) */}
                     className="flex items-center text-sm font-medium gap-2 px-4 h-9 text-text-light-secondary bg-content-light border border-border-light rounded-lg hover:bg-primary/10 transition-colorsg">

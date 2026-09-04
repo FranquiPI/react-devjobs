@@ -4,6 +4,7 @@ import { Pagination } from "../components/Pagination.jsx";
 import { JobsContainer } from "../components/JobsContainer.jsx";
 import { useEffect, useState } from "react";
 import Spinner from "../components/Spinner.jsx";
+import { useRouter } from "../hooks/useRouter.jsx";
 
 const RESULT_PER_PAGE = 4;
 const LOADING_DELAY = 2000;
@@ -12,16 +13,29 @@ const LOADING_DELAY = 2000;
 //   return new Promise((resolve) => setTimeout(resolve, ms));
 // }
 
+
 function useFilters() {
     // 1. Estados
-    const [filters, setFilters] = useState({
-        technology: "",
-        location: "",
-        contract: "",
+    const [filters, setFilters] = useState(() => {
+      const params = new URLSearchParams(window.location.search)
+      return{
+        technology: params.get('technology') || '',
+        location: params.get('location') || '',
+        contract: params.get('contract') || '',
+      }
     });
 
-    const [textToFilter, setTextToFilter] = useState("");
-    const [currentPage, setCurrentPage] = useState(1);
+    const [textToFilter, setTextToFilter] = useState(() => {
+      const params = new URLSearchParams(window.location.search)
+      return params.get('text') || ''
+    });
+
+    // useState para la página actual.
+    const [currentPage, setCurrentPage] = useState(() => {
+      const params = new URLSearchParams(window.location.search)
+      const page = Number(params.get('page'))
+      return Number.isNaN(page) ? page : 1
+    });
 
     // Estado para los empleos (inicialmente vacío)
   // jobs -> Array con los empleos, inicialmente vacío, se llena cuando la API responde
@@ -37,6 +51,9 @@ function useFilters() {
   // necesario para la paginación
   // Permite calcular cuántas páginas hay
   const [total, setTotal] = useState(0)
+
+  // navigateTo para la URL
+  const { navigateTo } = useRouter()
 
   useEffect(() => {
     let ignore = false;
@@ -90,6 +107,28 @@ function useFilters() {
       ignore = true;
     }
   }, [filters, textToFilter, currentPage])
+
+
+  // Podemos tener tantos filtros como necesitemos
+  // Este efecto es para la nueva URL
+  useEffect(() => {
+    const params = new URLSearchParams()
+
+    if (textToFilter) params.append('text', textToFilter)
+    if (filters.technology) params.append('technology', filters.technology)
+    if (filters.location) params.append('type', filters.location)
+    if (filters.experienceLevel) params.append('level', filters.experienceLevel)
+
+    if (currentPage > 1) params.append('page', currentPage)
+    
+    const newUrl = params.toString()
+      ? `${window.location.pathname}?${params.toString()}`
+      : window.location.pathname
+
+    
+    navigateTo(newUrl)
+
+  }, [filters, currentPage, textToFilter, navigateTo])
 
     // 2. Handlers
     const handleSearch = (newFilters) => {
@@ -160,6 +199,7 @@ export function SearchPage() {
     handleSearch, 
     handleTextFilter, 
     handlePageChange,
+    textToFilter,
     totalPages, 
     currentPage, 
     jobs,
@@ -186,7 +226,9 @@ export function SearchPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
           <aside className="md:col-span-3">
-            <Filters onSearch={handleSearch} onTextFilter={handleTextFilter} />
+            <Filters initialText={textToFilter} 
+            onSearch={handleSearch} 
+            onTextFilter={handleTextFilter} />
           </aside>
 
           <section className="md:col-span-9 flex flex-col">

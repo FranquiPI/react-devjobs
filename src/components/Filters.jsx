@@ -1,12 +1,13 @@
-import { useId, useState } from "react"
+import { useId, useState, useRef } from "react"
 
-let timeoutId = null 
 
 // Custom Hook para encapsular la lógica del formulario
 const useSearchForm = ({ onSearch, onTextFilter }) => {
     
-    // const [searchText, setSearchText] = useState('')
+    //const [searchText, setSearchText] = useState('')
     // Este estado: guarda el texto introducido por el usuario, se actualiza en handleChange, sera devuelto al componente para mostrarlo en el input
+    
+    const timeoutId = useRef(null)
 
     /* Search input useId */
     const textId = useId()
@@ -60,11 +61,11 @@ const useSearchForm = ({ onSearch, onTextFilter }) => {
 //      setSearchText(text) 
 
         // DEBOUNCE: Cancelar el timeout anterior
-        if (timeoutId) {
-            clearTimeout(timeoutId)
+        if (timeoutId.current) {
+            clearTimeout(timeoutId.current)
         }
 
-        timeoutId = setTimeout(() => {
+        timeoutId.current = setTimeout(() => {
             onTextFilter(text)
 
         }, 1000) //<-- Tiempo de Delay
@@ -103,7 +104,7 @@ const useSearchForm = ({ onSearch, onTextFilter }) => {
 }
 
 
-export function Filters({ onSearch, onTextFilter }) {
+export function Filters({ onSearch, onTextFilter, initialText }) {
 
     const {
         textId, 
@@ -163,6 +164,7 @@ export function Filters({ onSearch, onTextFilter }) {
                                 className=" flex w-full min-w-0 flex-1 overflow-hidden rounded-lg text-text-light-primary focus:outline-0 focus:ring-0 border-none bg-background-light focus:border-none h-full placeholder:text-text-light-secondary/80 px-4 rounded-r-none border-r-0 pr-2 rounded-l-none border-l-0 pl-2 text-sm font-normal leading-normal"
                                 placeholder="Buscar por puesto, empresa..."
                                 onChange={handleTextChange}
+                                defaultValue={initialText}
                             />
                         </div>
                     </label>
